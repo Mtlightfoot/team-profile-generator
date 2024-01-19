@@ -57,6 +57,12 @@ function managerInput() {
 
 managerInput();
 
+// Function to write html file
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (err) =>
+        err ? console.log(err) : console.log('Success!'))
+}
+
 // Create the inquirer flow so that it will ask different set of inquirer prompts based on user choice
 // Options question that gets asked after each employee is created
 const optionsQuestion = [
@@ -77,10 +83,11 @@ function optionsMenu() {
             internInput();
         } else {
             // HTML is generated
-            writeToFile('README.md', generateTeam(employees));
+            writeToFile('team.html', render(employees));
         }
     })
         .catch((error) => {
+            console.log(error)
             if (error.isTtyError) {
                 console.log("Couldn't be rendered in the current environment")
             } else {
