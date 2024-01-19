@@ -77,7 +77,7 @@ function optionsMenu() {
             internInput();
         } else {
             // HTML is generated
-            generateTeam(employees);
+            writeToFile('README.md', generateTeam(employees));
         }
     })
         .catch((error) => {
