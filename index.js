@@ -173,5 +173,3 @@ function internInput() {
             }
         })
 }
-
-// Write html result to file 
