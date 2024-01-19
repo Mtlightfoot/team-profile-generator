@@ -83,7 +83,7 @@ function optionsMenu() {
             internInput();
         } else {
             // HTML is generated
-            writeToFile('team.html', render(employees));
+            writeToFile(outputPath, render(employees));
         }
     })
         .catch((error) => {
